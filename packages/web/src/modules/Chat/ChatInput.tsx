@@ -60,6 +60,7 @@ let searchExpressionTimer: number = 0;
 let inputIME = false;
 
 function ChatInput() {
+    console.log('ChatInput');
     const action = useAction();
     const isLogin = useIsLogin();
     const connect = useSelector((state: State) => state.connect);
@@ -201,6 +202,7 @@ function ChatInput() {
         content: string,
         linkmanId = focus,
     ) {
+        console.log('handleSendMessage', localId, type, content, linkmanId);
         if (linkman.unread > 0) {
             action.setLinkmanProperty(linkman._id, 'unread', 0);
         }
